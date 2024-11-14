@@ -5,13 +5,7 @@
     <loc>http://localhost:55555/articles/installation/</loc>
     <lastmod>2021-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:55555/op/installation/</loc>
-    <lastmod>2021-12-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:55555/articles/</loc>
-    <lastmod>2021-12-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:55555/op/</loc>
     <lastmod>2021-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:55555/</loc>
@@ -26,31 +20,19 @@
     <loc>http://localhost:55555/articles/primary-menu/</loc>
     <lastmod>2021-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:55555/op/primary-menu/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:55555/articles/social-menu/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:55555/op/social-menu/</loc>
     <lastmod>2021-12-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:55555/articles/newsletter/</loc>
     <lastmod>2021-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:55555/op/newsletter/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:55555/articles/google-analytics/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:55555/op/google-analytics/</loc>
     <lastmod>2021-12-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:55555/articles/metatags/</loc>
     <lastmod>2021-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:55555/op/metatags/</loc>
+    <loc>http://localhost:55555/op/</loc>
     <lastmod>2021-12-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:55555/portfolio/design1/</loc>
