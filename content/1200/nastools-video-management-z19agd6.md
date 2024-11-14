@@ -12,8 +12,6 @@ isCJKLanguage: true
 
 # Nas-Tools（影音管理）
 
-# Nas-Tools（影音管理）
-
 ```bash
 # nas-tools admin password
 # --mount type=bind,source=/mnt/nas_share,target=/media \
