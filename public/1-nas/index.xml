@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles on Zane BlackWood Digital Garden</title>
+    <link>http://localhost:55555/1-nas/</link>
+    <description>Recent content in Articles on Zane BlackWood Digital Garden</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:55555/1-nas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2. Structure</title>
+      <link>http://localhost:55555/1-nas/structure/</link>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:55555/1-nas/structure/</guid>
+      <description>&lt;p&gt;Understand the structure of the theme&amp;rsquo;s setup to create content for your website.&lt;/p&gt;&#xA;&lt;h4 id=&#34;themes-content-structure&#34;&gt;Theme&amp;rsquo;s content structure&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.&#xD;&#xA;├── ...&#xD;&#xA;├── content                 # Hosts all Markdown content&#xD;&#xA;│   ├── articles            # Contains the list of markdown files for notes/posts&#xD;&#xA;│   │   ├── article-1.md&#xD;&#xA;│   │   ├── article-2.md&#xD;&#xA;│   │   └── article-3.md&#xD;&#xA;│   └── portfolio           # List of portfolio projects or case studies&#xD;&#xA;│       ├── project-1.md&#xD;&#xA;│       └── project-2.md&#xD;&#xA;├── data                    # Test files (alternatively `spec` or `tests`)&#xD;&#xA;│   └── stack.json          # Data used for rendering the list in Stack page&#xD;&#xA;└── ...&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that articles, portfolio and also stack pages require you to create &lt;code&gt;_index.md&lt;/code&gt; inside of it. Refer the &lt;a href=&#34;https://github.com/apvarun/digital-garden-hugo-theme/tree/main/exampleSite&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;exampleSite&lt;/a&gt; in theme.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

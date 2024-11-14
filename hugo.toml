@@ -1,6 +1,6 @@
 baseURL = "https://kentbryan404.github.io/"
 languageCode = "zh-cn"
-title = "Personal Digital Garden"
+title = "Zane BlackWood Digital Garden"
 theme = "digitalgarden"
 
 googleAnalytics = "UA-PROPERTY_ID"
@@ -24,41 +24,124 @@ googleAnalytics = "UA-PROPERTY_ID"
 
 [menu]
 [[menu.main]]
-  name = '主页'
+  name = '首页'
   url = '/'
   weight = 1
+
+
+
+
+
+
 [[menu.main]]
-  name = 'Content'
+  name = '服务器'
   params.header = true
-  weight = 2
+  weight = 1000
+
 [[menu.main]]
-  name = 'Articles'
-  url = '/articles'
-  weight = 3
+  name = 'Nas相关'
+  url = '/1100'
+  weight = 1100
+
 [[menu.main]]
-  name = '运维'
-  weight = 4
-  params.header = true
+  name = '视听影音'
+  url = '/1200'
+  weight = 1200
+
+
 [[menu.main]]
-  name = 'op'
-  url = '/op'
-  weight = 5
+  name = '私有云存储'
+  url = '/1300'
+  weight = 1300
+
+
+
 [[menu.main]]
-  name = 'Portfolio'
-  url = '/portfolio'
-  weight = 5
+  name = '博客分享'
+  url = '/1400'
+  weight = 1400
+
+
 [[menu.main]]
-  name = 'Stack'
-  url = '/stack'
-  weight = 6
+  name = '笔记软件'
+  url = '/1500'
+  weight = 1500
+
+
+[[menu.main]]
+  name = '图书馆'
+  url = '/1600'
+  weight = 1600
+
+
+
+
+[[menu.main]]
+name = '技术文档'
+params.header = true
+weight = 5000
+
+
+
+
+#[[menu.main]]
+#  name = 'Content'
+#  params.header = true
+#  weight = 2
+#[[menu.main]]
+#  name = 'Articles'
+#  url = '/articles'
+#  weight = 3
+#[[menu.main]]
+#  name = '运维'
+#  weight = 4
+#  params.header = true
+#[[menu.main]]
+#  name = 'op'
+#  url = '/op'
+#  weight = 4
+#[[menu.main]]
+#  name = 'Portfolio'
+#  url = '/portfolio'
+#  weight = 5
+#[[menu.main]]
+#  name = 'Stack'
+#  url = '/stack'
+#  weight = 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [[menu.main]]
   name = 'Links'
   params.header = true
-  weight = 7
+  weight = 99999
 [[menu.main]]
   name = 'Polywork'
   url = 'https://polywork.com'
-  weight = 8
+  weight = 100000
+
+
+
+
+
+
+
+
+
+
+
 
 [[menu.social]]
   name = 'Twitter'

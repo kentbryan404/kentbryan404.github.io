@@ -2,7 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:55555/1100/installation/</loc>
+    <lastmod>2021-12-19T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:55555/articles/installation/</loc>
+    <lastmod>2021-12-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:55555/1100/</loc>
     <lastmod>2021-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:55555/articles/</loc>
@@ -48,6 +54,14 @@
     <lastmod>2021-12-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:55555/categories/</loc>
+  </url><url>
+    <loc>http://localhost:55555/1200/</loc>
+  </url><url>
+    <loc>http://localhost:55555/1300/</loc>
+  </url><url>
+    <loc>http://localhost:55555/1400/</loc>
+  </url><url>
+    <loc>http://localhost:55555/1500/</loc>
   </url><url>
     <loc>http://localhost:55555/stack/</loc>
   </url><url>
