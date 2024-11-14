@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:55555/1100/installation/</loc>
-    <lastmod>2021-12-19T00:00:00+00:00</lastmod>
+    <loc>http://localhost:55555/</loc>
+    <lastmod>2024-11-14T08:52:51+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:55555/post/nastools-video-management-z19agd6.html</loc>
+    <lastmod>2024-11-14T08:52:51+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:55555/1200/</loc>
+    <lastmod>2024-11-14T08:52:51+08:00</lastmod>
   </url><url>
     <loc>http://localhost:55555/articles/installation/</loc>
     <lastmod>2021-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:55555/1100/</loc>
-    <lastmod>2021-12-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:55555/articles/</loc>
-    <lastmod>2021-12-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:55555/</loc>
     <lastmod>2021-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:55555/articles/structure/</loc>
@@ -55,7 +55,11 @@
   </url><url>
     <loc>http://localhost:55555/categories/</loc>
   </url><url>
-    <loc>http://localhost:55555/1200/</loc>
+    <loc>http://localhost:55555/stack/</loc>
+  </url><url>
+    <loc>http://localhost:55555/tags/</loc>
+  </url><url>
+    <loc>http://localhost:55555/1100/</loc>
   </url><url>
     <loc>http://localhost:55555/1300/</loc>
   </url><url>
@@ -63,8 +67,6 @@
   </url><url>
     <loc>http://localhost:55555/1500/</loc>
   </url><url>
-    <loc>http://localhost:55555/stack/</loc>
-  </url><url>
-    <loc>http://localhost:55555/tags/</loc>
+    <loc>http://localhost:55555/1600/</loc>
   </url>
 </urlset>

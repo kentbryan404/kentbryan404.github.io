@@ -37,11 +37,15 @@
   
   <meta itemprop="name" content="文章">
   <meta itemprop="description" content="My Digital Garden">
+  <meta itemprop="datePublished" content="2024-10-11T17:05:07+08:00">
+  <meta itemprop="dateModified" content="2024-11-14T08:52:51+08:00">
   <meta itemprop="image" content="http://localhost:55555/digital-garden-logo.png">
 
   
   <meta itemprop="name" content="文章">
   <meta itemprop="description" content="My Digital Garden">
+  <meta itemprop="datePublished" content="2024-10-11T17:05:07+08:00">
+  <meta itemprop="dateModified" content="2024-11-14T08:52:51+08:00">
   <meta itemprop="image" content="http://localhost:55555/digital-garden-logo.png">
 </head>
 <body class="flex relative h-full min-h-screen"><aside
@@ -379,6 +383,175 @@
   }
 </script>
 <div class="space-y-2.5">
+      <a class="article block px-3 py-4 hover:bg-slate-200 dark:hover:bg-slate-700" href="/post/nastools-video-management-z19agd6.html">
+
+        
+        
+        <h3 class="text-lg font-semibold mb-0.5">Nas-Tools（影音管理）</h3>
+        <div class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
+          <h1 id="nas-tools影音管理">Nas-Tools（影音管理）</h1>
+<h2 id="群晖">群晖</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># nas-tools admin password</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># --mount type=bind,source=/mnt/nas_share,target=/media \</span>
+</span></span><span style="display:flex;"><span>docker run -itd --name nas-tools <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>--hostname nas-tools <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>-p 12221:3000  <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>-v /opt/nastools/config:/config <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>-v /mnt/disk/video/sourc/film:/media/source/film <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>-v /mnt/disk/video/source/tv:/media/source/tv <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>-v /mnt/disk/video/link/film:/media/link/film <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>-v /mnt/disk/video/link/tv:/media/link/tv <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>-e <span style="color:#8be9fd;font-style:italic">PUID</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>-e <span style="color:#8be9fd;font-style:italic">PGID</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>-e <span style="color:#8be9fd;font-style:italic">UMASK</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">000</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>-e <span style="color:#8be9fd;font-style:italic">NASTOOL_AUTO_UPDATE</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">false</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>-e <span style="color:#8be9fd;font-style:italic">NASTOOL_CN_UPDATE</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">false</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>--restart unless-stopped <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>jxxghp/nas-tools:latest
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># 家庭影音</span>
+</span></span><span style="display:flex;"><span>cat &gt; docker-compose-pve.yml &lt;&lt; <span style="color:#f1fa8c">&#34;EOF&#34;</span>
+</span></span><span style="display:flex;"><span>version: <span style="color:#f1fa8c">&#39;3.3&#39;</span>
+</span></span><span style="display:flex;"><span>services:
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># 资源刮削</span>
+</span></span><span style="display:flex;"><span>    nas-tools:
+</span></span><span style="display:flex;"><span>        container_name: nas-tools
+</span></span><span style="display:flex;"><span>        hostname: nas-tools
+</span></span><span style="display:flex;"><span>        ports:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;12221:3000&#39;</span>
+</span></span><span style="display:flex;"><span>        volumes:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/opt/nastools/config:/config&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/sourc/film:/media/source/film&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/source/tv:/media/source/tv&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/link/film:/media/link/film&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/link/tv:/media/link/tv&#39;</span>
+</span></span><span style="display:flex;"><span>        environment:
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">PUID</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">PGID</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">UMASK</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">000</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">NASTOOL_AUTO_UPDATE</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">false</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">NASTOOL_CN_UPDATE</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">false</span>
+</span></span><span style="display:flex;"><span>        restart: unless-stopped
+</span></span><span style="display:flex;"><span>        image: <span style="color:#f1fa8c">&#39;ljnpng/nastools:2.9.2&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># 媒体影音</span>
+</span></span><span style="display:flex;"><span>    jellyfin:
+</span></span><span style="display:flex;"><span>        container_name: jellyfin
+</span></span><span style="display:flex;"><span>        restart: always
+</span></span><span style="display:flex;"><span>        environment:
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">PUID</span><span style="color:#ff79c6">=</span>root
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">PGID</span><span style="color:#ff79c6">=</span>root
+</span></span><span style="display:flex;"><span>        ports:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;12222:8096&#39;</span>
+</span></span><span style="display:flex;"><span>        volumes:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/opt/jellyfin/config:/config/&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/sourc/film:/media/source/film&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/source/tv:/media/source/tv&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/link/film:/media/link/film&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/link/tv:/media/link/tv&#39;</span>
+</span></span><span style="display:flex;"><span>        devices:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/dev/dri/renderD128:/dev/dri/renderD128&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/dev/dri/card0:/dev/dri/card0&#39;</span>
+</span></span><span style="display:flex;"><span>        image: <span style="color:#f1fa8c">&#39;nyanmisaka/jellyfin:latest&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># 下载器</span>
+</span></span><span style="display:flex;"><span>    qbittorrentee:
+</span></span><span style="display:flex;"><span>        container_name: qb
+</span></span><span style="display:flex;"><span>        environment:
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">WEBUIPORT</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">8080</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">PUID</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">PGID</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">TZ</span><span style="color:#ff79c6">=</span>Asia/Shanghai
+</span></span><span style="display:flex;"><span>        ports:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;6881:6881&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;6881:6881/udp&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;12223:8080&#39;</span>
+</span></span><span style="display:flex;"><span>        volumes:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/opt/qbittorrent/config/:/config&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/sourc/film:/media/source/film&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/source/tv:/media/source/tv&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/link/film:/media/link/film&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/link/tv:/media/link/tv&#39;</span>
+</span></span><span style="display:flex;"><span>        restart: unless-stopped
+</span></span><span style="display:flex;"><span>        image: <span style="color:#f1fa8c">&#39;superng6/qbittorrentee:latest&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># 自动化字幕    </span>
+</span></span><span style="display:flex;"><span>    chinesesubfinder:
+</span></span><span style="display:flex;"><span>        container_name: chinesesubfinder
+</span></span><span style="display:flex;"><span>        restart: always
+</span></span><span style="display:flex;"><span>        environment:
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">PUID</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">PGID</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">TZ</span><span style="color:#ff79c6">=</span>Asia/Shanghai
+</span></span><span style="display:flex;"><span>        ports:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;12224:19035&#39;</span>
+</span></span><span style="display:flex;"><span>        volumes:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/opt/chinesesubfinder/config:/config&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/opt/chinesesubfinder/cache:/app/SubFixCache&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/source/film/:/media/source/film&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/source/tv:/media/source/tv&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/link/film/:/media/link/film&#39;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/mnt/disk/video/link/tv:/media/link/tv&#39;</span>
+</span></span><span style="display:flex;"><span>        image: <span style="color:#f1fa8c">&#39;allanpk716/chinesesubfinder:latest&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># 索引器</span>
+</span></span><span style="display:flex;"><span>    jackett:
+</span></span><span style="display:flex;"><span>        container_name: jackett
+</span></span><span style="display:flex;"><span>        environment:
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">PUID</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">PGID</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">TZ</span><span style="color:#ff79c6">=</span>Asia/Shanghai
+</span></span><span style="display:flex;"><span>            - <span style="color:#8be9fd;font-style:italic">AUTO_UPDATE</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">true</span>
+</span></span><span style="display:flex;"><span>        ports:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;12225:9117&#39;</span>
+</span></span><span style="display:flex;"><span>        volumes:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f1fa8c">&#39;/opt/jackett:/config&#39;</span>
+</span></span><span style="display:flex;"><span>        restart: unless-stopped
+</span></span><span style="display:flex;"><span>        image: <span style="color:#f1fa8c">&#39;linuxserver/jackett:latest&#39;</span>
+</span></span><span style="display:flex;"><span>EOF
+</span></span><span style="display:flex;"><span>docker-compose -f docker-compose-pve.yml up -d
+</span></span><span style="display:flex;"><span>docker ps
+</span></span></code></pre></div><pre tabindex="0"><code class="language-纯文本" data-lang="纯文本">
+
+
+docker run -itd --name showdoc --restart always --user=root --privileged=true -p 18883:80 -v D:\software\ShowDoc:/var/www/html/ star7th/showdoc
+docker run --name=gitlab -itd --publish 18884:80 --restart always --volume D:\software\gitlab\configs:/etc/gitlab --volume D:\software\gitlab\logs:/var/log/gitlab --volume D:\software\gitlab\data:/var/opt/gitlab gitlab/gitlab-ce:latest
+</code></pre><pre tabindex="0"><code class="language-纯文本" data-lang="纯文本">docker run --name=gitlab -itd \
+-p 18884:80 \
+--user=root \
+--privileged=true \
+-v /home/kentbryce/gitlab/configs:/etc/gitlab \
+-v /home/kentbryce/gitlab/logs:/var/log/gitlab \
+-v /home/kentbryce/gitlab/data:/var/opt/gitlab \
+gitlab/gitlab-ce:15.11.1-ce.0
+
+docker cp /home/kentbryce/gitlab/configs gitlab:///etc/gitlab
+docker cp /home/kentbryce/gitlab/logs gitlab:///var/log/gitlab
+docker cp /home/kentbryce/gitlab/data gitlab:///var/opt/gitlab
+
+
+docker stop gitlab &amp;&amp; docker rm gitlab
+docker run --detach \
+--publish 8443:443 \
+--publish 18884:80 \
+--name gitlab \
+--user=root \
+--privileged=true \
+--restart unless-stopped \
+-v /home/kentbryce/gitlab/configs:/etc/gitlab \
+-v /home/kentbryce/gitlab/logs:/var/log/gitlab \
+-v /home/kentbryce/gitlab/data:/var/opt/gitlab \
+gitlab/gitlab-ce:15.11.1-ce.0
+
+
+docker run -it \
+    -v /data/software/zentao/data:/data \
+    -p 18888:80 \
+    -e MYSQL_INTERNAL=false \
+    -e ZT_MYSQL_HOST=127.0.0.1 \
+    -e ZT_MYSQL_PORT=3306 \
+    -e ZT_MYSQL_USER=root \
+    -e ZT_MYSQL_PASSWORD=root \
+    -e ZT_MYSQL_DB=zentao \
+    hub.zentao.net/app/zentao
+</code></pre>
+        </div>
+      </a>
       </div>
   </section>
 

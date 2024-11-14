@@ -9,8 +9,12 @@ isCJKLanguage: true
 ---
 
 
-
 # Nas-Tools（影音管理）
+
+
+## 群晖
+
+
 
 ```bash
 # nas-tools admin password
