@@ -1,19 +1,5 @@
----
-title: Nas-Tools（影音管理）
-slug: nastools-video-management-z19agd6
-url: /post/nastools-video-management-z19agd6.html
-date: '2024-10-11 17:05:07+08:00'
-lastmod: '2024-11-14 08:52:51+08:00'
-toc: true
-isCJKLanguage: true
----
-
-
-
-# Nas-Tools（影音管理）
-
-```bash
-# nas-tools admin password
+<h1>Nas-Tools（影音管理）</h1>
+<pre><code class="language-bash"># nas-tools admin password
 # --mount type=bind,source=/mnt/nas_share,target=/media \
 docker run -itd --name nas-tools \
 --hostname nas-tools \
@@ -30,11 +16,9 @@ docker run -itd --name nas-tools \
 -e NASTOOL_CN_UPDATE=false \
 --restart unless-stopped \
 jxxghp/nas-tools:latest
-```
-
-```bash
-# 家庭影音
-cat > docker-compose-pve.yml << "EOF"
+</code></pre>
+<pre><code class="language-bash"># 家庭影音
+cat &gt; docker-compose-pve.yml &lt;&lt; &quot;EOF&quot;
 version: '3.3'
 services:
     # 资源刮削
@@ -131,20 +115,16 @@ services:
 EOF
 docker-compose -f docker-compose-pve.yml up -d
 docker ps
-```
-
-```纯文本
-
+</code></pre>
+<pre><code class="language-纯文本">
 
 
 docker run -itd --name showdoc --restart always --user=root --privileged=true -p 18883:80 -v D:\software\ShowDoc:/var/www/html/ star7th/showdoc
 docker run --name=gitlab -itd --publish 18884:80 --restart always --volume D:\software\gitlab\configs:/etc/gitlab --volume D:\software\gitlab\logs:/var/log/gitlab --volume D:\software\gitlab\data:/var/opt/gitlab gitlab/gitlab-ce:latest
 
 
-```
-
-```纯文本
-docker run --name=gitlab -itd \
+</code></pre>
+<pre><code class="language-纯文本">docker run --name=gitlab -itd \
 -p 18884:80 \
 --user=root \
 --privileged=true \
@@ -158,7 +138,7 @@ docker cp /home/kentbryce/gitlab/logs gitlab:///var/log/gitlab
 docker cp /home/kentbryce/gitlab/data gitlab:///var/opt/gitlab
 
 
-docker stop gitlab && docker rm gitlab
+docker stop gitlab &amp;&amp; docker rm gitlab
 docker run --detach \
 --publish 8443:443 \
 --publish 18884:80 \
@@ -184,4 +164,4 @@ docker run -it \
     hub.zentao.net/app/zentao
 
 
-```
+</code></pre>
